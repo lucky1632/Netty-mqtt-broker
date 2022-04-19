@@ -45,7 +45,6 @@ public class TestClient {
     }
 
     public static void main(String[] args) throws InterruptedException {
-//        new TestClient("localhost", 5555).run();
         EventLoopGroup loop = new NioEventLoopGroup(Runtime.getRuntime().availableProcessors() * 2);
 
         MqttClient mqttClient = new MqttClientImpl(((topic, payload) -> {
@@ -54,7 +53,7 @@ public class TestClient {
 
         mqttClient.setEventLoop(loop);
         mqttClient.getClientConfig().setChannelClass(NioSocketChannel.class);
-        mqttClient.getClientConfig().setClientId("asdfkjkljf267");
+        mqttClient.getClientConfig().setClientId("asdfkjkljf267"); // you can use shortUuid() to generate random clientId
 //        mqttClient.getClientConfig().setUsername("test1");
 //        mqttClient.getClientConfig().setPassword("test");
         mqttClient.getClientConfig().setProtocolVersion(MqttVersion.MQTT_3_1_1);
