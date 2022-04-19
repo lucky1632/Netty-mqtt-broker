@@ -1,0 +1,12 @@
+
+push:
+  pollingFrequency: 20000
+  enableMqttDevice: true
+
+mqtt:
+   device:
+      port: 5555
+metrics.console.enabled: true
+#spring:
+#   main:
+#   allow-cirscular-references: true
